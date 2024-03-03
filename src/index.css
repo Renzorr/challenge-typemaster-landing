@@ -2,20 +2,17 @@
 @font-face {
   font-family: "Barlow";
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-500-normal.woff2)
-    format("woff2");
+  src: url(/barlow-latin-500-normal.woff2) format("woff2");
 }
 @font-face {
   font-family: "Barlow";
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-700-normal.woff2)
-    format("woff2");
+  src: url(/barlow-latin-700-normal.woff2) format("woff2");
 }
 @font-face {
   font-family: "Barlow";
   font-weight: 900;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-900-normal.woff2)
-    format("woff2");
+  src: url(/barlow-latin-900-normal.woff2) format("woff2");
 }
 /* VARIABLES */
 :root {
@@ -24,7 +21,7 @@
   --fs-2xl: clamp(48px, 5cqw, 55px);
   --fs-xl: clamp(28px, 5cqw, 32px);
   --fs-lg: clamp(20px, 5cqw, 24px);
-  --fs-md: 18px;
+  --fs-md: clamp(16px, 3cqw, 18px);
   --fs-base: 16px;
 
   --fw-semibold: 500;
