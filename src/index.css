@@ -1,0 +1,118 @@
+/* FONTS */
+@font-face {
+  font-family: "Barlow";
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-500-normal.woff2)
+    format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-700-normal.woff2)
+    format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-weight: 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/barlow@latest/latin-900-normal.woff2)
+    format("woff2");
+}
+/* VARIABLES */
+:root {
+  --ff-sans: "Barlow";
+
+  --fs-2xl: clamp(48px, 5cqw, 55px);
+  --fs-xl: clamp(28px, 5cqw, 32px);
+  --fs-lg: clamp(20px, 5cqw, 24px);
+  --fs-md: 18px;
+  --fs-base: 16px;
+
+  --fw-semibold: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --dark-gray: #162542;
+  --gray: #7b8bad;
+  --light-gray: #e8eff2;
+  --orange: #f16718;
+  --white: #fff;
+
+  --duration-300: 0.3s ease;
+}
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: var(--fs-base);
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-semibold);
+  color: var(--gray);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-gray);
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+}
+/* UTILITIES */
+.container {
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+.container-hidden {
+  overflow: hidden;
+}
+.btn {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: -0.2px;
+  color: var(--txt-color);
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  padding: 19px 24px;
+  transition: var(--duration-300);
+}
+.btn-primary {
+  --txt-color: var(--dark-gray);
+  --bg-color: var(--light-gray);
+
+  &:hover {
+    --txt-color: var(--white);
+    --bg-color: var(--dark-gray);
+  }
+}
+.btn-secondary {
+  --txt-color: var(--white);
+  --bg-color: var(--orange);
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.grid-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}

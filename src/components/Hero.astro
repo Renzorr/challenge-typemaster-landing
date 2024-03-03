@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import srcImage from "../assets/image-keyboard.jpg";
+import srcPattern from "../assets/svg/pattern-square.svg";
+---
+
+<main class="container hero">
+  <Image
+    src={srcPattern}
+    width={255}
+    height={240}
+    alt=""
+    aria-hidden="true"
+    class="pattern-right"
+  />
+  <article>
+    <h1>Typemaster Keyboard</h1>
+    <p>
+      Improve your productivity and gaming without breaking the bank. Upgrade to
+      a high quality mechanical typing experience.
+    </p>
+    <a href="/" class="btn btn-secondary">Pre-order now</a>
+    <span>Release on 5/27</span>
+  </article>
+  <Image
+    src={srcImage}
+    width={540}
+    height={480}
+    alt=""
+    aria-hidden="true"
+    class="grid-img"
+  />
+</main>
+
+<style>
+  .hero {
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: minmax(250px, 460px) minmax(250px, 540px);
+    gap: 30px;
+    margin-top: 82px;
+  }
+  .hero article {
+    padding-top: 60px;
+
+    & h1 {
+      font-size: var(--fs-2xl);
+      letter-spacing: 0.9px;
+      line-height: 55px;
+      margin-bottom: 26px;
+    }
+    & p {
+      font-size: var(--fs-md);
+      letter-spacing: -0.2px;
+      line-height: 25.5px;
+      margin-bottom: 40px;
+    }
+    & span {
+      font-size: var(--fs-md);
+      font-weight: var(--fw-bold);
+      text-transform: uppercase;
+      letter-spacing: -1.2px;
+      margin-left: 38px;
+    }
+  }
+  .pattern-right {
+    position: absolute;
+    top: 0;
+    right: -23%;
+  }
+
+  @media (width <= 1025px) {
+    .pattern-right {
+      display: none;
+    }
+    .hero {
+      margin-top: 0;
+    }
+    .hero img {
+      min-height: 500px;
+    }
+  }
+
+  @media (width <= 820px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .hero img {
+      min-height: 300px;
+    }
+  }
+</style>

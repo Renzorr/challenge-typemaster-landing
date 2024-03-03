@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import srcImage1 from "../assets/image-phone-and-keyboard.jpg";
+import srcImage2 from "../assets/image-glass-and-keyboard.jpg";
+import srcPattern from "../assets/svg/pattern-square.svg";
+---
+
+<section class="container about">
+  <Image
+    src={srcPattern}
+    width={255}
+    height={240}
+    alt=""
+    aria-hiddent="true"
+    class="pattern-left"
+  />
+  <aside class="about-gallery">
+    <Image
+      src={srcImage1}
+      width={255}
+      height={481}
+      alt=""
+      aria-hidden="true"
+      class="grid-img"
+    />
+    <Image
+      src={srcImage2}
+      width={445}
+      height={481}
+      alt=""
+      aria-hidden="true"
+      class="grid-img"
+    />
+  </aside>
+  <article class="about-content">
+    <h3>Mechanical Wireless Keyboard</h3>
+    <p>
+      The Typemaster keyboard boasts top-notch build and practical design. It
+      offers a wide variety of switches and keycaps, along with reliable
+      wireless connectivity.
+    </p>
+  </article>
+</section>
+
+<style>
+  .about {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(300px, 730px) minmax(250px, 255px);
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .about-gallery {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: minmax(120px, 255px) minmax(250px, 445px);
+  }
+  .about-content {
+    margin-top: 112px;
+
+    & h3 {
+      font-size: var(--fs-xl);
+      line-height: 36px;
+      margin-bottom: 26px;
+    }
+    & p {
+      line-height: 26px;
+    }
+  }
+  .pattern-left {
+    position: absolute;
+    bottom: 0;
+    left: -23%;
+  }
+
+  @media (width <= 1025px) {
+    .about {
+      grid-template-columns: 1fr;
+    }
+    .about-gallery {
+      gap: 30px;
+      justify-content: space-between;
+      grid-template-columns: 1fr 3fr;
+
+      & img {
+        max-height: 400px;
+        min-height: 150px;
+      }
+    }
+    .about-content {
+      margin-top: 0;
+      display: flex;
+
+      & p {
+        margin-top: 10px;
+      }
+    }
+    .pattern-left {
+      display: none;
+    }
+  }
+
+  @media (width <= 820px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

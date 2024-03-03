@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/svg/logo.svg";
+---
+
+<header class="container">
+  <a href="/"
+    ><Image src={Logo} alt="Typemaster logo" width={40} height={40} /></a
+  >
+  <a href="/" class="btn btn-primary">Pre-order now</a>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 56px;
+  }
+
+  @media (width <= 1025px) {
+    header {
+      margin-top: 20px;
+    }
+  }
+</style>
